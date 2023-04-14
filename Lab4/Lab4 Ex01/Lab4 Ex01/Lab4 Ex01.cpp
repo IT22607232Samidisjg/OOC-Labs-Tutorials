@@ -8,6 +8,8 @@ using namespace std;
 float CircArea(float r);
 float RecArea(float length, float width);
 float SqureArea(float length);
+float landPerimeter(Rectangle rectangleBig, float& perimeter);
+float findCost(float unitCost, float& perimeter);
 
 
 struct Circle {
@@ -28,6 +30,8 @@ int main()
 	Circle circle1;
 	Rectangle rectangle1,rectangleBig;
 	Square square1;
+	float perimeter;
+	float perUnit = 10;
 
 	cout << "Input the radius of circle(m2): ";
 	cin >> circle1.radius;
@@ -51,11 +55,14 @@ int main()
 	float rArea = RecArea(rectangle1.length, rectangle1.width);
 	float sArea = SqureArea(square1.length);
 	float rBigArea = RecArea(rectangleBig.length, rectangleBig.width);
-
 	float greenArea = rBigArea - (cArea + rArea + sArea);
+	float perimeterofYard = landPerimeter(rectangleBig,perimeter);
+	float total = findCost(perUnit,perimeter);
+
 	cout << setprecision(3) << setiosflags(ios::fixed);
 	cout << "Area of the Green Colour Area(m2) : " << greenArea << "m2" << endl;
-
+	cout << "Perimeter of the land: " << perimeter << "m" << endl;
+	cout << "Cost of the fence(Rs): " << total << endl;
 }
 
 float CircArea(float r){
@@ -73,8 +80,17 @@ float SqureArea(float length) {
 	float areaSquare = length * length;
 	return areaSquare;
 }
+float landPerimeter(Rectangle rectangleBig, float& perimeter) {
+	perimeter = (rectangleBig.length + rectangleBig.width) * 2;
+	//float perimeter1 = 2 * (length + width);
+	return perimeter;
+}
 
-
+float findCost(float unitCost, float& perimeter) {
+	
+	float cost1= unitCost * perimeter;
+	return cost1;
+}
 
 
 
