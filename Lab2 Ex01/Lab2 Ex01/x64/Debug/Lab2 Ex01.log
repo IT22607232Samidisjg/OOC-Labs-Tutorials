@@ -1,0 +1,2 @@
+﻿Lab2 Ex01.obj : error LNK2005: main already defined in Ex02.obj
+D:\Yr-01,sem-02\OOC\Labs\Lab2 Ex01\x64\Debug\Lab2 Ex01.exe : fatal error LNK1169: one or more multiply defined symbols found
